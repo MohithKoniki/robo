@@ -20,7 +20,7 @@
   exit 1
  fi
 
-id roboshop &>>$[LOG_FILE]
+id roboshop &>>${LOG_FILE}
 if [ $? -ne 0 ]; then
  echo "add user"
  useradd roboshop &>>$LOG_FILE
