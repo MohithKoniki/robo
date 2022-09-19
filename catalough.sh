@@ -4,12 +4,13 @@
  curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$LOG_FILE
  echo status = $?
 
- echo"install nodejs"
+ echo  "install nodejs"
  yum install nodejs -y &>>$LOG_FILE
 echo status = $?
 
 echo "add user"
  useradd roboshop &>>$LOG_FILE
+ echo status = $?
 
 echo "download catalouge application code"
  curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>$LOG_FILE
