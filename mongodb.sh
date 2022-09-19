@@ -27,8 +27,8 @@ echo status =$?
 
 cd /tmp
 
-echo "unzipping
-" unzip mongodb.zip &>>$LOG_FILE
+echo "unzipping"
+unzip mongodb.zip &>>$LOG_FILE
 echo status = $?
 
 
