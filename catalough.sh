@@ -7,6 +7,7 @@
   echo status = SUCCESS
   else
   echo status = FAILURE
+  exit
  fi
 
  echo  "install nodejs"
@@ -16,6 +17,7 @@
   echo status = SUCCESS
   else
   echo status = FAILURE
+  exit
  fi
 
 echo "add user"
@@ -25,6 +27,7 @@ echo "add user"
    echo status = SUCCESS
    else
    echo status = FAILURE
+   exit
   fi
 
 echo "download catalouge application code"
@@ -34,6 +37,7 @@ echo "download catalouge application code"
    echo status = SUCCESS
    else
    echo status = FAILURE
+   exit
   fi
 
  cd /home/roboshop
@@ -45,6 +49,7 @@ echo "download catalouge application code"
    echo status = SUCCESS
    else
    echo status = FAILURE
+   exit
   fi
 
 echo "moving 1"
@@ -54,6 +59,7 @@ echo "moving 1"
    echo status = SUCCESS
    else
    echo status = FAILURE
+   exit
   fi
 
 echo "cd"
@@ -63,6 +69,7 @@ echo "cd"
    echo status = SUCCESS
    else
    echo status = FAILURE
+   exit
   fi
 
 echo "installing npm"
@@ -72,6 +79,7 @@ npm install &>>$LOG_FILE
   echo status = SUCCESS
   else
   echo status = FAILURE
+  exit
  fi
 
 echo "moving files"
@@ -81,6 +89,7 @@ echo "moving files"
    echo status = SUCCESS
    else
    echo status = FAILURE
+   exit
   fi
 
  echo "reloading"
@@ -90,6 +99,7 @@ echo "moving files"
   echo status = SUCCESS
   else
   echo status = FAILURE
+  exit
  fi
 
 echo "starting"
@@ -99,6 +109,7 @@ echo "starting"
    echo status = SUCCESS
    else
    echo status = FAILURE
+   exit
   fi
 
  echo "enabling"
@@ -108,4 +119,5 @@ echo "starting"
   echo status = SUCCESS
   else
   echo status = FAILURE
+  exit
  fi
