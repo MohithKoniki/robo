@@ -20,12 +20,11 @@
   exit 1
  fi
 
-id roboshop &>>${log_file}
+id roboshop &>>$log_file
 if [ $? -ne 0 ]; then
  echo "add user"
  useradd roboshop &>>$LOG_FILE
-  if [ $? -eq 0 ]
-   then
+  if [ $? -eq 0 ]; then
    echo status = SUCCESS
    else
    echo status = FAILURE
