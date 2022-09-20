@@ -1,6 +1,6 @@
 LOG_FILE=/tmp/redis
 
-common.sh
+source common.sh
 
 
 echo "installing rpm"
