@@ -36,7 +36,7 @@ statuscheck() {
      rm -rf ${COMPONENT}  ${COMPONENT}-main &>>{LOG_FILE}
      statuscheck $?
 
-    echo "unzipping"
+    echo "extracting files"
     unzip /tmp/${COMPONENT}.zip &>>$LOG_FILE
      statuscheck $?
 
