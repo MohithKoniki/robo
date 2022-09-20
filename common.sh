@@ -26,6 +26,7 @@ statuscheck() {
 
 
 
+
    echo "download ${COMPONENT} application code"
     curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG_FILE
     statuscheck $?
