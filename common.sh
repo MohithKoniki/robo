@@ -33,7 +33,7 @@ statuscheck() {
     cd /home/roboshop
 
      echo "clean old content"
-     rm -rf ${COMPONENT} &>>{LOG_FILE}
+     rm -rf ${COMPONENT}  ${COMPONENT}-main &>>{LOG_FILE}
      statuscheck $?
 
     echo "unzipping"
