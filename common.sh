@@ -10,17 +10,17 @@ statuscheck() {
 
  nodejs() {
     echo "set repos"
-    curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$LOG_FILE
+    curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG_FILE}
    statuscheck $?
 
     echo  "install nodejs"
     yum install nodejs -y &>>$LOG_FILE
    statuscheck $?
 
-   id roboshopshop &>>${LOG_FILE}
+   id roboshop &>>${LOG_FILE}
    if [ $? -ne 0 ]; then
     echo "add user"
-    useradd roboshopshop &>>$LOG_FILE
+    useradd roboshop &>>$LOG_FILE
      statuscheck $?
    fi
 
@@ -28,10 +28,10 @@ statuscheck() {
 
 
    echo "download ${COMPONENT} application code"
-    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshopshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG_FILE
+    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG_FILE
     statuscheck $?
 
-    cd /home/roboshopshop
+    cd /home/roboshop
 
      echo "clean old content"
      rm -rf ${COMPONENT}  ${COMPONENT}-main &>>{LOG_FILE}
