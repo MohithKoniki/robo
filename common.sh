@@ -40,7 +40,7 @@ statuscheck() {
     unzip /tmp/${COMPONENT}.zip &>>$LOG_FILE
      statuscheck $?
 
-   echo "moving 1"
+   echo "moving files"
     mv ${COMPONENT}-main ${COMPONENT} &>>$LOG_FILE
      statuscheck $?
 
@@ -58,7 +58,6 @@ statuscheck() {
 
    echo "moving files"
     mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
-    .service
      statuscheck $?
 
     echo "reloading"
