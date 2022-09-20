@@ -30,7 +30,7 @@ statuscheck() {
     curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG_FILE
     statuscheck $?
 
-    cd /home/roboshop
+    cd /home/robo
 
      echo "clean old content"
      rm -rf ${COMPONENT}  ${COMPONENT}-main &>>{LOG_FILE}
