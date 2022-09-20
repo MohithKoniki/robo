@@ -1,6 +1,6 @@
 LOG_FILE=/tmp/user
 
-
+source common.sh
 
  echo "set repos"
  curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$LOG_FILE
