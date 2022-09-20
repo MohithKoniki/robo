@@ -46,7 +46,7 @@ statuscheck() {
      statuscheck $?
 
    echo "cd"
-    cd /home/roboshop/${COMPONENT} &>>$LOG_FILE
+    cd /home/robo/${COMPONENT} &>>$LOG_FILE
     statuscheck $?
 
    echo "installing npm"
