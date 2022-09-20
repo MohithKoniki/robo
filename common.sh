@@ -17,10 +17,10 @@ statuscheck() {
     yum install nodejs -y &>>$LOG_FILE
    statuscheck $?
 
-   id roboshop &>>${LOG_FILE}
+   id roboshopshop &>>${LOG_FILE}
    if [ $? -ne 0 ]; then
     echo "add user"
-    useradd roboshop &>>$LOG_FILE
+    useradd roboshopshop &>>$LOG_FILE
      statuscheck $?
    fi
 
@@ -28,10 +28,10 @@ statuscheck() {
 
 
    echo "download ${COMPONENT} application code"
-    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG_FILE
+    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshopshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG_FILE
     statuscheck $?
 
-    cd /home/robo
+    cd /home/roboshopshop
 
      echo "clean old content"
      rm -rf ${COMPONENT}  ${COMPONENT}-main &>>{LOG_FILE}
@@ -46,7 +46,7 @@ statuscheck() {
      statuscheck $?
 
    echo "cd"
-    cd /home/robo/${COMPONENT} &>>$LOG_FILE
+    cd /home/roboshop/${COMPONENT} &>>$LOG_FILE
     statuscheck $?
 
    echo "installing npm"
@@ -54,11 +54,11 @@ statuscheck() {
    statuscheck $?
 
    echo "update systemd service file"
-   sed -i -e 's/REDIS_ENDPOINT/redis.robo.internal/' -e 's/MONGO_ENDPOINT/mongo.robo.internal/' /home/robo/${COMPONENT}/systemd.service
+   sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongo.roboshop.internal/' /home/roboshop/${COMPONENT}/systemd.service
    statuscheck $?
 
    echo "moving files"
-    mv /home/robo/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+    mv /home/roboshopshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
      statuscheck $?
 
     echo "reloading"
