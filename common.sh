@@ -57,7 +57,7 @@ statuscheck() {
    statuscheck $?
 
    echo "moving files"
-    mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+    mv /home/robo/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
      statuscheck $?
 
     echo "reloading"
