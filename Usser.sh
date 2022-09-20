@@ -46,7 +46,7 @@ sed -i -e 's/REDIS_ENDPOINT/redis.robo.internal/' -e 's/MONGO_ENDPOINT/mongo.rob
 statuscheck $?
 
 echo "moving files"
- mv /home/roboshop/user/systemd.service /etc/systemd/system/user.service
+ mv /home/roboshop/Usser/systemd.service /etc/systemd/system/Usser.service
   statuscheck $?
 
  echo "reloading"
@@ -54,7 +54,7 @@ echo "moving files"
  statuscheck $?
 
 echo "starting"
- systemctl start user &>>$LOG_FILE
+ systemctl start usser &>>$LOG_FILE
  statuscheck $?
 
  echo "enabling"
