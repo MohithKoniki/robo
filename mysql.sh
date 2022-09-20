@@ -1,6 +1,6 @@
 LOG_FILE=&>>/tmp/mysql
 
-soure common.sh
+source common.sh
 
 
 echo "installing repo files"
