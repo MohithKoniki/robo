@@ -42,7 +42,7 @@ npm install &>>$LOG_FILE
 statuscheck $?
 
 echo "update systemd service file"
-sed -i -e 's/REDIS_ENDPOINT/redis.robo.internal/' -e 's/MONGO_ENDPOINT/mongo.robo.internal/  '
+sed -i -e 's/REDIS_ENDPOINT/redis.robo.internal/' -e 's/MONGO_ENDPOINT/mongo.robo.internal/' /home/robo/user/systemd.service
 statuscheck $?
 
 echo "moving files"
