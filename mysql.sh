@@ -20,5 +20,11 @@ echo "start mysql"
  systemctl start mysqld  &>>{LOG_FILE}
  statuscheck $?
 
- grep temp /var/log/mysqld.log
+Default_password=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
+echo "set password for 'root'@'hostname' = password
+('${roboshop_mysql_password}')
+FLUSH PRIVILEGES;" >/tmp/root-pass.sql
 
+echo "change the default password"
+mysql -uroot -p"${Default_password}" </tmp/root-pass.sql  &>>{LOG_FILE}
+statuscheck $?
