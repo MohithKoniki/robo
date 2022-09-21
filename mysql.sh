@@ -25,8 +25,8 @@ echo "set password for 'root'@'hostname' = password
 ('${roboshop_mysql_password}')
 FLUSH PRIVILEGES;" >/tmp/root-pass.sql
 
-echo "show databases;" |mysql -uroot -p${ROBOSHOP MYSQL PASSWORD} &>>{LOG_FILE}
-if [ $? ne 0] ; then
+echo "show databases;" |mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD} &>>{LOG_FILE}
+if [ $? -ne 0 ]; then
  echo "change the default password"
  mysql --connect -expired-password -uroot -p"${Default_password}" </tmp/root-pass.sql  &>>{LOG_FILE}
  statuscheck $?
