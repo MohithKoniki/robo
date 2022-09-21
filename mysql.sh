@@ -26,6 +26,6 @@ echo "set password for 'root'@'hostname' = password
 FLUSH PRIVILEGES;" >/tmp/root-pass.sql
 
 echo "change the default password"
-mysql -uroot -p"${Default_password}" </tmp/root-pass.sql  &>>{LOG_FILE}
+mysql --connect -expired-password -uroot -p"${Default_password}" </tmp/root-pass.sql  &>>{LOG_FILE}
 statuscheck $?
 
