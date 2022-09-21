@@ -28,3 +28,4 @@ FLUSH PRIVILEGES;" >/tmp/root-pass.sql
 echo "change the default password"
 mysql -uroot -p"${Default_password}" </tmp/root-pass.sql  &>>{LOG_FILE}
 statuscheck $?
+
