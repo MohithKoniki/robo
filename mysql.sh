@@ -22,7 +22,7 @@ echo "start mysql"
 
 Default_password=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
 echo "set password for 'root'@'hostname' = password
-('${roboshop_mysql_password}')
+('${ROBOSHOP_MYSQL_PASSWORD}')
 FLUSH PRIVILEGES;" >/tmp/root-pass.sql
 
 echo "show databases;" |mysql -uroot -p${ROBOSHOP_MYSQL_PASSWORD} &>>{LOG_FILE}
